@@ -50,17 +50,13 @@ const SlantedBackground = styled.span`
   }
 `;
 
-const Content = tw.div`px-4 flex flex-1 flex-col justify-center items-center`;
-const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 font-medium text-sm`;
-
-const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
-
-const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
-  padding-bottom: 56.25% !important;
-  padding-top: 0px !important;
-  ${tw`rounded`}
-  iframe {
-    ${tw`rounded bg-black shadow-xl`}
+const Actions = styled.div`
+  ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
+  input {
+    ${tw` w-full h-12 rounded-sm border-2  focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500 px-4 -mx-4 py-2`}
+  }
+  button {sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500
+    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-500 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-900 transition duration-300`}
   }
 `;
 
@@ -69,10 +65,7 @@ export default () => {
     <NavLinks key={1}>
       <NavLink href="#">About</NavLink>
       <NavLink href="#">Professionals</NavLink>
-      <NavLink href="/login">Sign In</NavLink>
-    </NavLinks>,
-    <NavLinks key={2}>
-      <PrimaryLink href="/create-new-account">Create Provider Account</PrimaryLink>
+      <NavLink href="/login">Sign In</NavLink>  
     </NavLinks>,
   ];
 

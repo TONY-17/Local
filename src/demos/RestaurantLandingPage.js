@@ -23,9 +23,19 @@ export default () => {
       <TabGrid
         heading={
           <>
+            <HighlightedText>Products.</HighlightedText>
+          </>
+        }
+        tabsVisible={false}
+        activeTabIndx={6}
+      />
+      <TabGrid
+        heading={
+          <>
             <HighlightedText>Services.</HighlightedText>
           </>
         }
+        activeTabIndx={0}
       />
       <Footer />
     </AnimationRevealPage>

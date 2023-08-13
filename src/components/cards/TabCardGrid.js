@@ -19,15 +19,22 @@ const TabControl = styled.div`
   &:hover {
     ${tw`bg-gray-300 text-gray-700`}
   }
-  ${props => props.active && tw`bg-primary-500! text-gray-100!`}
+  ${(props) => props.active && tw`bg-primary-500! text-gray-100!`}
   }
 `;
 
-const TabContent = tw(motion.div)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
+const TabContent = tw(
+  motion.div
+)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
 const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
-const Card = tw(motion.a)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+const Card = tw(
+  motion.a
+)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
 const CardImageContainer = styled.div`
-  ${props => css`background-image: url("${props.imageSrc}");`}
+  ${(props) =>
+    css`
+      background-image: url("${props.imageSrc}");
+    `}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
 const CardRatingContainer = tw.div`leading-none absolute inline-flex bg-gray-100 bottom-0 left-0 ml-4 mb-4 rounded-full px-5 py-2 items-end`;
@@ -66,90 +73,109 @@ export default ({
         imageSrc:
           "https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "John Gattie",
-        content: "Want a perfectionist. Dont even think twice about picking me.",
-        price: "$5.99",
+        content:
+          "Want a perfectionist. Dont even think twice about picking me.",
+        price: "R5.99",
         rating: "5.0",
         reviews: "87",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Tyler Jones Lee",
-        content: "Very reliable will arrive early and complete all the desired work.",
-        price: "$2.99",
+        content:
+          "Very reliable will arrive early and complete all the desired work.",
+        price: "R2.99",
         rating: "4.8",
         reviews: "32",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1535090467336-9501f96eef89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Kamogelo Mavimbela",
-        content:"Very reliable will arrive early and complete all the desired work.",
-        price: "$8.99",
+        content:
+          "Very reliable will arrive early and complete all the desired work.",
+        price: "R8.99",
         rating: "4.6",
         reviews: "12",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1505798577917-a65157d3320a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Chillie Cake",
         content: "Wont regret it  I have a perfect rating for a reason.",
-        price: "$2.99",
+        price: "R2.99",
         rating: "5.0",
         reviews: "61",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1608613304810-2d4dd52511a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Guacamole Mex",
-        content: "Very good at what I do and very affordable. You should book me.",
+        content:
+          "Very good at what I do and very affordable. You should book me.",
         price: "R3.99",
         rating: "4.2",
         reviews: "95",
-        url: "#"
+        url: "#",
       },
       {
         imageSrc:
           "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
         title: "Carnet Nachos",
-        content: "Very reliable will arrive early and complete all the desired work.",
+        content:
+          "Very reliable will arrive early and complete all the desired work.",
         price: "R3.99",
         rating: "3.9",
         reviews: "26",
-        url: "#"
-      }
+        url: "#",
+      },
     ],
     Gardening: getRandomCards(),
     Repair: getRandomCards(),
     Cleaning: getRandomCards(),
     Electrician: getRandomCards(),
-    Kitchen: getRandomCards()
-  }
+    Kitchen: getRandomCards(),
+    Products: getRandomCards2(),
+  },
+  tabsVisible = true,
+  activeTabIndx = 0,
 }) => {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
    * as the key and value of the key will be its content (as an array of objects).
    * To see what attributes are configurable of each object inside this array see the example above for "Starters".
    */
+
   const tabsKeys = Object.keys(tabs);
-  const [activeTab, setActiveTab] = useState(tabsKeys[0]);
+  const [activeTab, setActiveTab] = useState(
+    tabsKeys[activeTabIndx == 0 ? 0 : activeTabIndx]
+  );
 
   return (
     <Container>
       <ContentWithPaddingXl>
         <HeaderRow>
           <Header>{heading}</Header>
-          <TabsControl>
-            {Object.keys(tabs).map((tabName, index) => (
-              <TabControl key={index} active={activeTab === tabName} onClick={() => setActiveTab(tabName)}>
-                {tabName}
-              </TabControl>
-            ))}
-          </TabsControl>
+          {tabsVisible ? (
+            <TabsControl>
+              {Object.keys(tabs).map((tabName, index) => (
+                <TabControl
+                  key={index}
+                  active={activeTab === tabName}
+                  onClick={() => setActiveTab(tabName)}
+                >
+                  {tabName}
+                </TabControl>
+              ))}
+            </TabsControl>
+          ) : (
+            <></>
+          )}
         </HeaderRow>
 
         {tabsKeys.map((tabKey, index) => (
@@ -158,54 +184,62 @@ export default ({
             variants={{
               current: {
                 opacity: 1,
-                scale:1,
+                scale: 1,
                 display: "flex",
               },
               hidden: {
                 opacity: 0,
-                scale:0.8,
+                scale: 0.8,
                 display: "none",
-              }
+              },
             }}
             transition={{ duration: 0.4 }}
             initial={activeTab === tabKey ? "current" : "hidden"}
             animate={activeTab === tabKey ? "current" : "hidden"}
           >
-            {tabs[tabKey].map((card, index) => (
-              <CardContainer key={index}>
-                <Card className="group" href={card.url} initial="rest" whileHover="hover" animate="rest">
-                  <CardImageContainer imageSrc={card.imageSrc}>
-                    <CardRatingContainer>
-                      <CardRating>
-                        <StarIcon />
-                        {card.rating}
-                      </CardRating>
-                      <CardReview>({card.reviews})</CardReview>
-                    </CardRatingContainer>
-                    <CardHoverOverlay
-                      variants={{
-                        hover: {
-                          opacity: 1,
-                          height: "auto"
-                        },
-                        rest: {
-                          opacity: 0,
-                          height: 0
-                        }
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <CardButton>Send Message</CardButton>
-                    </CardHoverOverlay>
-                  </CardImageContainer>
-                  <CardText>
-                    <CardTitle>{card.title}</CardTitle>
-                    <CardContent>{card.content}</CardContent>
-                    <CardPrice>{card.price}</CardPrice>
-                  </CardText>
-                </Card>
-              </CardContainer>
-            ))}
+            {tabs[tabKey]
+              .filter((card, index) => index !== 6)
+              .map((card, index) => (
+                <CardContainer key={index}>
+                  <Card
+                    className="group"
+                    href={card.url}
+                    initial="rest"
+                    whileHover="hover"
+                    animate="rest"
+                  >
+                    <CardImageContainer imageSrc={card.imageSrc}>
+                      <CardRatingContainer>
+                        <CardRating>
+                          <StarIcon />
+                          {card.rating}
+                        </CardRating>
+                        <CardReview>({card.reviews})</CardReview>
+                      </CardRatingContainer>
+                      <CardHoverOverlay
+                        variants={{
+                          hover: {
+                            opacity: 1,
+                            height: "auto",
+                          },
+                          rest: {
+                            opacity: 0,
+                            height: 0,
+                          },
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <CardButton>Send Message</CardButton>
+                      </CardHoverOverlay>
+                    </CardImageContainer>
+                    <CardText>
+                      <CardTitle>{card.title}</CardTitle>
+                      <CardContent>{card.content}</CardContent>
+                      <CardPrice>{card.price}</CardPrice>
+                    </CardText>
+                  </Card>
+                </CardContainer>
+              ))}
           </TabContent>
         ))}
       </ContentWithPaddingXl>
@@ -223,61 +257,123 @@ const getRandomCards = () => {
         "https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "John Gattie",
       content: "Want a perfectionist. Dont even think twice about picking me.",
-      price: "$5.99",
+      price: "R5.99",
       rating: "5.0",
       reviews: "87",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Tyler Jones Lee",
-      content: "Very reliable will arrive early and complete all the desired work.",
-      price: "$2.99",
+      content:
+        "Very reliable will arrive early and complete all the desired work.",
+      price: "R2.99",
       rating: "4.8",
       reviews: "32",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1535090467336-9501f96eef89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Kamogelo Mavimbela",
-      content:"Very reliable will arrive early and complete all the desired work.",
-      price: "$8.99",
+      content:
+        "Very reliable will arrive early and complete all the desired work.",
+      price: "R8.99",
       rating: "4.6",
       reviews: "12",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1505798577917-a65157d3320a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Chillie Cake",
       content: "Wont regret it  I have a perfect rating for a reason.",
-      price: "$2.99",
+      price: "R2.99",
       rating: "5.0",
       reviews: "61",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1608613304810-2d4dd52511a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Guacamole Mex",
-      content: "Very good at what I do and very affordable. You should book me.",
+      content:
+        "Very good at what I do and very affordable. You should book me.",
       price: "R3.99",
       rating: "4.2",
       reviews: "95",
-      url: "#"
+      url: "#",
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "Carnet Nachos",
-      content: "Very reliable will arrive early and complete all the desired work.",
+      content:
+        "Very reliable will arrive early and complete all the desired work.",
       price: "R3.99",
       rating: "3.9",
       reviews: "26",
-      url: "#"
-    }
+      url: "#",
+    },
+  ];
+
+  // Shuffle array
+  return cards.sort(() => Math.random() - 0.5);
+};
+
+const getRandomCards2 = () => {
+  const cards = [
+    {
+      imageSrc:
+        "https://www.istore.co.za/media/catalog/product/i/p/iphone_14_pro_space_black_pdp_image_position-1a__eaen.jpg",
+      title: "Iphone 14 pro",
+      content: "128GB - Space Gray",
+      price: "R599 pmx24",
+      rating: "5.0",
+      reviews: "87",
+      url: "#",
+    },
+    {
+      imageSrc:
+        "https://www.istore.co.za/media/catalog/product/i/p/iphone_14_pro_space_black_pdp_image_position-1a__eaen.jpg",
+      title: "Iphone 14 pro",
+      content: "128GB - Space Gray",
+      price: "R599 pmx24",
+      rating: "5.0",
+      reviews: "87",
+      url: "#",
+    },
+    {
+      imageSrc:
+        "https://www.istore.co.za/media/catalog/product/u/l/ultra_2_1.png?format=jpeg",
+      title: "Apple Watch ",
+      content: "Ultra with Ocean Band",
+      price: "R299 pmx24",
+      rating: "5.0",
+      reviews: "87",
+      url: "#",
+    },
+    {
+      imageSrc:
+        "https://www.istore.co.za/media/catalog/product/a/p/apple_watch_ultra_lte_49mm_titanium_beige_yellow_trail_loop_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+      title: "Apple Watch ",
+      content: "Ultra with Ocean Band",
+      price: "R299 pmx24",
+      rating: "5.0",
+      reviews: "87",
+      url: "#",
+    },
+    {
+      imageSrc:
+        "https://www.istore.co.za/media/catalog/product/i/p/iphone_14_pro_space_black_pdp_image_position-1a__eaen.jpg",
+      title: "Apple Watch ",
+      content: "Ultra with Ocean Band",
+      price: "R299 pmx24",
+      rating: "5.0",
+      reviews: "87",
+      url: "#",
+    },
   ];
 
   // Shuffle array
