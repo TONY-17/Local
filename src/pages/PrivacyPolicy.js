@@ -12,7 +12,7 @@ import { SectionHeading } from "components/misc/Headings";
 const HeadingRow = tw.div`flex`;
 const Heading = tw(SectionHeading)`text-gray-900 mb-10`;
 const Text = styled.div`
-  ${tw`text-lg  text-gray-800`}
+  ${tw`text-lg  text-gray-800`}s
   p {
     ${tw`mt-2 leading-loose`}
   }

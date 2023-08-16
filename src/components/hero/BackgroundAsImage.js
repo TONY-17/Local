@@ -28,7 +28,7 @@ const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-5`;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-15`;
 
 const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
 const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
@@ -63,8 +63,8 @@ const Actions = styled.div`
 export default () => {
   const navLinks = [
     <NavLinks key={1}>
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
-      <NavLink href="#">Professionals</NavLink>
       <NavLink href="/login">Sign In</NavLink>  
     </NavLinks>,
   ];

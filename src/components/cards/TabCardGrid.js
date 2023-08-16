@@ -229,7 +229,16 @@ export default ({
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <CardButton>Send Message</CardButton>
+                        <CardButton
+                          onClick={() => {
+                            const serializedCard = encodeURIComponent(
+                              JSON.stringify(card)
+                            );
+                            window.location = `/components/landingPages/SaaSProductLandingPage?serializedCard=${serializedCard}`;
+                          }}
+                        >
+                          View Details
+                        </CardButton>
                       </CardHoverOverlay>
                     </CardImageContainer>
                     <CardText>

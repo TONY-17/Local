@@ -20,6 +20,7 @@ export default () => {
   return (
     <AnimationRevealPage>
       <Hero />
+
       <TabGrid
         heading={
           <>
