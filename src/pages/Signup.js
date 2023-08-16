@@ -58,7 +58,7 @@ const IllustrationImage = styled.div`
 export default ({
   logoLinkUrl = "#",
   illustrationImageSrc = illustration,
-  headingText = "Create Provider Profile",
+  headingText = "Create Account",
   socialButtons = [
     {
       iconImageSrc: googleIconImageSrc,
@@ -87,15 +87,7 @@ export default ({
               <Form href="/">
                 <Input type="email" placeholder="Email" />
                 <Input type="password" placeholder="Password" />
-
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
-
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
-
-                <Input type="email" placeholder="Email" />
-                <Input type="password" placeholder="Password" />
+                <Input type="password" placeholder="Repeat Password" />
                 <SubmitButton type="submit">
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>
@@ -127,6 +119,9 @@ export default ({
             </FormContainer>
           </MainContent>
         </MainContainer>
+        <IllustrationContainer>
+          <IllustrationImage imageSrc={illustrationImageSrc} />
+        </IllustrationContainer>
       </Content>
     </Container>
   </AnimationRevealPage>

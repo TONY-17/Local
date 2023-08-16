@@ -56,7 +56,7 @@ const IllustrationImage = styled.div`
 export default ({
   logoLinkUrl = "/#",
   illustrationImageSrc = illustration,
-  headingText = "Sign In To Easy Plug MarketPlace",
+  headingText = "Sign In To Easy Plug",
   socialButtons = [
     {
       iconImageSrc: googleIconImageSrc,
@@ -82,19 +82,7 @@ export default ({
           <MainContent>
             <Heading>{headingText}</Heading>
             <FormContainer>
-              <SocialButtonsContainer>
-                {socialButtons.map((socialButton, index) => (
-                  <SocialButton key={index} href={socialButton.url}>
-                    <span className="iconContainer">
-                      <img src={socialButton.iconImageSrc} className="icon" alt=""/>
-                    </span>
-                    <span className="text">{socialButton.text}</span>
-                  </SocialButton>
-                ))}
-              </SocialButtonsContainer>
-              <DividerTextContainer>
-                <DividerText>Or Sign in with your e-mail</DividerText>
-              </DividerTextContainer>
+ 
               <Form href="/">
                 <Input type="email" placeholder="Email" />
                 <Input type="password" placeholder="Password" />

@@ -103,8 +103,22 @@ import SignupPage from "pages/Signup.js";
 import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
 import ThankYouPage from "ThankYouPage.js";
-
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+  SignIn,
+  SignUp,
+  UserButton,
+} from "@clerk/clerk-react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
+if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
+}
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
@@ -113,7 +127,8 @@ export default function App() {
 
   return (
     <>
-      <GlobalStyles />
+     <ClerkProvider publishableKey={clerkPubKey}>
+     <GlobalStyles />
       <Router>
         <Routes>
           <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} />
@@ -122,9 +137,10 @@ export default function App() {
           <Route path="/" element={<RestaurantLandingPage />} />
           <Route path="/create-new-account" element={<SignupPage />} />
           <Route path="/about-us" element={<PrivacyPolicyPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<SignIn/>} />
         </Routes>
       </Router>
+     </ClerkProvider>
     </>
   );
 }
