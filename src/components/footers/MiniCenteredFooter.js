@@ -35,7 +35,7 @@ export default () => {
       <Content>
         <Row>
           <LogoContainer>
-            <LogoText>Business Name</LogoText>
+            <LogoText>Easy Plug MarketPlace</LogoText>
           </LogoContainer>
           <SocialLinksContainer>
             <SocialLink href="https://facebook.com">
@@ -49,7 +49,7 @@ export default () => {
             </SocialLink>
           </SocialLinksContainer>
           <CopyrightText>
-            &copy; Copyright 2020, Business Name Inc. All Rights Reserved.
+            &copy; Copyright 2020, Easy Plug MarketPlace Inc. All Rights Reserved.
           </CopyrightText>
         </Row>
       </Content>
