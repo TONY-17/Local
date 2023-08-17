@@ -137,7 +137,7 @@ export default function App() {
           <Route path="/" element={<RestaurantLandingPage />} />
           <Route path="/create-new-account" element={<SignupPage />} />
           <Route path="/about-us" element={<PrivacyPolicyPage />} />
-          <Route path="/login" element={<SignIn/>} />
+          <Route path="/login" element={<LoginPage/>} />
         </Routes>
       </Router>
      </ClerkProvider>

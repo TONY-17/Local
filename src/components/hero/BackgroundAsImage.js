@@ -2,7 +2,7 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-
+import { ReactComponent as LocationIcon } from "feather-icons/dist/icons/map-pin.svg";
 import Header, {
   NavLink,
   NavLinks,
@@ -41,6 +41,13 @@ const Heading = styled.h1`
     ${tw`inline-block mt-2`}
   }
 `;
+const HeadingDescription = styled.h1`
+  ${tw`text-xl text-center sm:text-xl lg:text-xl xl:text-xl font-black text-gray-100 leading-snug -mt-24 sm:mt-0`}
+  span {
+    ${tw`inline-block mt-2`}
+  }
+`;
+
 
 const SlantedBackground = styled.span`
   ${tw`relative text-primary-500 px-4 -mx-4 py-2`}
@@ -61,14 +68,47 @@ const Actions = styled.div`
 `;
 
 export default () => {
+  const [userLocation, setUserLocation] = React.useState(null);
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
-      <NavLink href="/login">Sign In</NavLink>  
+      <NavLink href="/login">Sign In</NavLink>
     </NavLinks>,
   ];
 
+  const successCallback = async (position) => {
+    try {
+      const { latitude, longitude } = position.coords;
+
+      // Fetch the location name using Mapbox Geocoding API
+      const response = await fetch(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=pk.eyJ1IjoidHktMTciLCJhIjoiY2xsZXo4dnQzMHJyNTNxbnpsb2Myd3poNCJ9.8wqIfEeC6qmZVvf7b6vR_A`
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        const locationName = data.features[0].text;
+        setUserLocation(locationName);
+      } else {
+        console.log("Failed to fetch location data.");
+      }
+    } catch (error) {
+      console.log("Error fetching location:", error);
+    }
+  };
+
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+
+  React.useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }, []);
   return (
     <Container>
       <OpacityOverlay />
@@ -81,7 +121,10 @@ export default () => {
           <SlantedBackground>Local Professionals.</SlantedBackground>
           <br />
         </Heading>
-        <br /> <br /> <br />
+        
+        <br /> 
+        <HeadingDescription> <LocationIcon tw="w-4 h-4 text-gray-600" />{userLocation}</HeadingDescription>
+        <br /> <br />
       </HeroContainer>
       <br />
     </Container>
