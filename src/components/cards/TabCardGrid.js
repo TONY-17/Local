@@ -383,6 +383,26 @@ const getRandomCards2 = () => {
       reviews: "87",
       url: "#",
     },
+    {
+      imageSrc:
+      "https://images.unsplash.com/photo-1567433517180-d3e56cf7f81e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvc21ldGljc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
+      title: "Plastic Face wash",
+      content: "Two plastic bottles",
+      price: "R799",
+      rating: "5.0",
+      reviews: "27",
+      url: "#",
+    },
+    {
+      imageSrc:
+        "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvc21ldGljc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
+      title: "Estee Lauder ",
+      content: "Perfectly Clean",
+      price: "R599",
+      rating: "6.0",
+      reviews: "77",
+      url: "#",
+    },
   ];
 
   // Shuffle array

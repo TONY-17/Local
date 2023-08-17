@@ -82,7 +82,7 @@ export default () => {
       const { latitude, longitude } = position.coords;
 
       // Fetch the location name using Mapbox Geocoding API
-      const response = await fetch(
+      const response = await fetch(``
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=pk.eyJ1IjoidHktMTciLCJhIjoiY2xsZXo4dnQzMHJyNTNxbnpsb2Myd3poNCJ9.8wqIfEeC6qmZVvf7b6vR_A`
       );
 
