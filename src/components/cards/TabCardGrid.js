@@ -405,6 +405,9 @@ const getRandomCards2 = () => {
     },
   ];
 
-  // Shuffle array
-  return cards.sort(() => Math.random() - 0.5);
+  const shuffledCards = cards.sort(() => Math.random() - 0.5);
+
+  // Return a random number of items (between 1 and the array length)
+  const randomNumber = Math.floor(Math.random() * shuffledCards.length) + 1;
+  return shuffledCards.slice(0, randomNumber);
 };
