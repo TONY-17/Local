@@ -7,6 +7,7 @@ import Features from "components/features/DashedBorderSixFeatures";
 import MainFeature from "components/features/TwoColWithButton.js";
 import MainFeature2 from "components/features/TwoColSingleFeatureWithStats2.js";
 import TabGrid from "components/cards/TabCardGrid.js";
+import TabCardGridProducts from "components/cards/TabCardGridProducts.js";
 import Testimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
 import DownloadApp from "components/cta/DownloadApp.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
@@ -21,14 +22,12 @@ export default () => {
     <AnimationRevealPage>
       <Hero />
 
-      <TabGrid
+      <TabCardGridProducts
         heading={
           <>
             <HighlightedText>Products.</HighlightedText>
           </>
         }
-        tabsVisible={false}
-        activeTabIndx={6}
       />
       <TabGrid
         heading={

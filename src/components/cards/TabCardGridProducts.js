@@ -68,165 +68,63 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({
   heading = "Checkout the Menu",
   tabs = {
-    Plumbing: [
-      {
-        imageSrc:
-          "https://th.bing.com/th?id=OIP.hz2eImSSZ17YD0JioU1DOgHaFK&w=299&h=208&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "John Gattie",
-        content:
-          "Want a perfectionist. Dont even think twice about picking me.",
-        price: " ",
-        rating: "5.0",
-        reviews: "87",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th?id=OIP.UDcOPFxn3Tq8hllTAYklHgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "Tyler Jones Lee",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
-        rating: "4.8",
-        reviews: "32",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th?id=OIP.2KW49u-g_W4hgM3rdm3nowHaFM&w=298&h=209&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "Kamogelo Mavimbela",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
-        rating: "4.6",
-        reviews: "12",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th?id=OIP.Xh3DRDWA2yRH8YMPIbPmjgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "Chillie Cake",
-        content: "Wont regret it  I have a perfect rating for a reason.",
-        price: " ",
-        rating: "5.0",
-        reviews: "61",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th/id/OIP.8F1JzGF5uVZ6t0VF2H20GwHaFQ?w=215&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-        title: "Guacamole Mex",
-        content:
-          "Very good at what I do and very affordable. You should book me.",
-        price: " ",
-        rating: "4.2",
-        reviews: "95",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th/id/OIP.I_qKl3g4ey0DZjdh8BootwHaFK?w=247&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-        title: "Carnet Nachos",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
-        rating: "3.9",
-        reviews: "26",
-        url: "#",
-      },
-    ],
-    Gardening: getRandomCards(),
-    Repair: getRandomRepair(),
-    Cleaning: [
-      {
-        imageSrc:
-          "https://studentsuds.com/wp-content/uploads/2018/02/shutterstock_420460471.jpg",
-        title: "John Gattie",
-        content:
-          "Want a perfectionist. Dont even think twice about picking me.",
-        price: " ",
-        rating: "5.0",
-        reviews: "87",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th/id/OIP.npOMTIFr3UhouPsng0b7lwAAAA?pid=ImgDet&rs=1",
-        title: "Tyler Jones Lee",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
-        rating: "4.8",
-        reviews: "32",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th/id/OIP.2vdUe_GWz476MIHPvzfMLgHaE8?pid=ImgDet&rs=1",
-        title: "Kamogelo Mavimbela",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
-        rating: "4.6",
-        reviews: "12",
-        url: "#",
-      },
-      
-    ],
-    Products: getRandomCards2(),
-  },
-  productTabs = {
     Detergents: [
       {
         imageSrc:
-          "https://th.bing.com/th?id=OIP.hz2eImSSZ17YD0JioU1DOgHaFK&w=299&h=208&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "John Gattie",
-        content:
-          "Want a perfectionist. Dont even think twice about picking me.",
-        price: "",
+        "https://th.bing.com/th/id/OIP.QMbqiEh1w6qKgw5TPBwuKQHaHa?pid=ImgDet&rs=1",
+        title: "Tide Fresh Coral Blast",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        price: "R53.99",
         rating: "5.0",
         reviews: "87",
         url: "#",
       },
       {
         imageSrc:
-          "https://th.bing.com/th?id=OIP.UDcOPFxn3Tq8hllTAYklHgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "Tyler Jones Lee",
+        "https://th.bing.com/th/id/OIP.ay2jAviSSn3vbcJV1uFeFAHaHa?pid=ImgDet&rs=1",
+        title: "OMO Auto",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        price: "R53.99",
+        rating: "5.0",
+        reviews: "87",
+        url: "#",
+      },
+      {
+        imageSrc:
+        "https://th.bing.com/th/id/OIP.HVRNqUmQS2DegJeMI6xNEAHaHa?pid=ImgDet&rs=1",
+        title: "Domestos",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        price: "R53.99",
+        rating: "5.0",
+        reviews: "87",
+        url: "#",
+      },
+      {
+        imageSrc:
+        "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
+        title: "Laundry Detergent",
         content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: "",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        price: "R22.99",
         rating: "4.8",
         reviews: "32",
         url: "#",
       },
       {
         imageSrc:
-          "https://th.bing.com/th?id=OIP.hz2eImSSZ17YD0JioU1DOgHaFK&w=299&h=208&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "John Gattie",
+        "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
+        title: "Laundry Detergent",
         content:
-          "Want a perfectionist. Dont even think twice about picking me.",
-        price: "",
-        rating: "5.0",
-        reviews: "87",
-        url: "#",
-      },
-      {
-        imageSrc:
-          "https://th.bing.com/th?id=OIP.UDcOPFxn3Tq8hllTAYklHgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
-        title: "Tyler Jones Lee",
-        content:
-          "Very reliable will arrive early and complete all the desired work.",
-        price: " ",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        price: "R22.99",
         rating: "4.8",
         reviews: "32",
         url: "#",
       },
     ],
-    Cosmetics: [],
+    Cosmetics: getRandomCards(),
   },
-  tabsVisible = true,
   activeTabIndx = 0,
-  activeTabIndx1 = 0,
 }) => {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
@@ -239,18 +137,12 @@ export default ({
     tabsKeys[activeTabIndx == 0 ? 0 : activeTabIndx]
   );
 
-  const tabsKeys1 = Object.keys(productTabs);
-  const [activeTab1, setActiveTab1] = useState(
-    tabsKeys1[activeTabIndx1 == 0 ? 0 : activeTabIndx1]
-  );
-
   return (
     <Container>
       <ContentWithPaddingXl>
         <HeaderRow>
           <Header>{heading}</Header>
-          {tabsVisible ? (
-            <TabsControl>
+          <TabsControl>
               {Object.keys(tabs).map((tabName, index) => (
                 <TabControl
                   key={index}
@@ -261,21 +153,6 @@ export default ({
                 </TabControl>
               ))}
             </TabsControl>
-          ) : (
-            <>
-              <TabsControl>
-                {Object.keys(productTabs).map((tabName, index) => (
-                  <TabControl
-                    key={index}
-                    active={activeTab1 === tabName}
-                    onClick={() => setActiveTab1(tabName)}
-                  >
-                    {tabName}
-                  </TabControl>
-                ))}
-              </TabsControl>
-            </>
-          )}
         </HeaderRow>
 
         {tabsKeys.map((tabKey, index) => (
@@ -363,43 +240,43 @@ const getRandomCards = () => {
   const cards = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "John Gattie",
-      content: "Want a perfectionist. Dont even think twice about picking me.",
-      price: " ",
+      "https://th.bing.com/th/id/OIP.dzqB33x0LyqukcKpPZ52owHaFj?w=269&h=202&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      title: "Bestial Beauty",
+      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      price: "R53.99",
       rating: "5.0",
       reviews: "87",
       url: "#",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Tyler Jones Lee",
+      "https://th.bing.com/th/id/R.6da6e5ddffb5236157085b0dd7dff8e5?rik=rzpUgrWXiUsMGA&riu=http%3a%2f%2f3.bp.blogspot.com%2f_MAEXNH0nVoU%2fTO1MWhnh1nI%2fAAAAAAAAHrM%2fMo6k0MpX6Zo%2fs1600%2fchanel%2bholiday%2bgroup%2b2.bmp&ehk=y55fqzSPYuAhLEMQVXcq9lsCTi0A%2bkcH23VXYB%2bZNRQ%3d&risl=&pid=ImgRaw&r=0",
+      title: "Avon",
       content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: " ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      price: "R22.99",
       rating: "4.8",
       reviews: "32",
       url: "#",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1535090467336-9501f96eef89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Kamogelo Mavimbela",
+     "https://www.littlemagonline.com/wp-content/uploads/2009/10/chanelwinter2009noirsobscurscollection1-280x300.jpeg", 
+      title: "Nail Archives",
       content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: " ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      price: "R89.99",
       rating: "4.6",
       reviews: "12",
       url: "#",
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1637531347055-4fa8aa80c111?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
-      title: "Carnet Nachos",
+      "https://th.bing.com/th/id/OIP.-DTAICpg3D4DISX13eH_9QHaFw?pid=ImgDet&w=200&h=154&c=7&dpr=1,5",
+      title: "The pink Panel",
       content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: " ",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      price: "R312.99",
       rating: "3.9",
       reviews: "26",
       url: "#",
@@ -470,7 +347,7 @@ const getRandomCards2 = () => {
         "https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
       title: "John Gattie",
       content: "Want a perfectionist. Dont even think twice about picking me.",
-      price: " ",
+      price: "R5.99",
       rating: "5.0",
       reviews: "87",
       url: "#",
@@ -481,7 +358,7 @@ const getRandomCards2 = () => {
       title: "Tyler Jones Lee",
       content:
         "Very reliable will arrive early and complete all the desired work.",
-      price: " ",
+      price: "R2.99",
       rating: "4.8",
       reviews: "32",
       url: "#",
@@ -492,7 +369,7 @@ const getRandomCards2 = () => {
       title: "Kamogelo Mavimbela",
       content:
         "Very reliable will arrive early and complete all the desired work.",
-      price: " ",
+      price: "R8.99",
       rating: "4.6",
       reviews: "12",
       url: "#",
@@ -503,7 +380,7 @@ const getRandomCards2 = () => {
       title: "Carnet Nachos",
       content:
         "Very reliable will arrive early and complete all the desired work.",
-      price:  "",
+      price: "R3.99",
       rating: "3.9",
       reviews: "26",
       url: "#",

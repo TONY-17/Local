@@ -88,8 +88,7 @@ export default () => {
               <span className="textContainer">
                 <span className="title">{card.title || "Fully Secure"}</span>
               </span>
-            </Card>
-          
+            </Card>    
           </Column>
         ))}
       </ThreeColumnContainer>
