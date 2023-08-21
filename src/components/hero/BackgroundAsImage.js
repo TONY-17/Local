@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -12,6 +12,14 @@ import Header, {
   DesktopNavLinks,
 } from "../headers/light.js";
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  UserProfile,
+  RedirectToSignIn,
+} from "@clerk/clerk-react";
+import { useNavigate, BrowserRouter } from "react-router-dom";
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none`}
@@ -48,7 +56,6 @@ const HeadingDescription = styled.h1`
   }
 `;
 
-
 const SlantedBackground = styled.span`
   ${tw`relative text-primary-500 px-4 -mx-4 py-2`}
   &::before {
@@ -68,16 +75,24 @@ const Actions = styled.div`
 `;
 
 export default () => {
-  
+  const navigate = useNavigate();
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="/">Home</NavLink>
       <NavLink href="/about-us">About</NavLink>
-      <NavLink href="/login">Sign In</NavLink>
+
+      {/* Signed in users will see their user profile,
+         unauthenticated users will be redirected */}
+      <SignedIn>
+        <NavLink href="/manage-account">Account</NavLink>
+      </SignedIn>
+      <SignedOut>
+        <NavLink href="/login">Sign In</NavLink>
+      </SignedOut>
     </NavLinks>,
   ];
-  const [userLocation, setUserLocation] = useState('');
-  
+  const [userLocation, setUserLocation] = useState("");
+
   const successCallback = async (position) => {
     try {
       const { latitude, longitude } = position.coords;
@@ -103,7 +118,10 @@ export default () => {
   };
 
   useEffect(() => {
-    const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
+    const watchId = navigator.geolocation.watchPosition(
+      successCallback,
+      errorCallback
+    );
 
     return () => {
       // Cleanup function to stop watching for position changes when the component unmounts
@@ -123,9 +141,12 @@ export default () => {
           <SlantedBackground>Local Professionals.</SlantedBackground>
           <br />
         </Heading>
-        
-        <br /> 
-        <HeadingDescription> <LocationIcon tw="w-4 h-4 text-gray-600" />{userLocation}</HeadingDescription>
+        <br />
+        <HeadingDescription>
+          {" "}
+          <LocationIcon tw="w-4 h-4 text-gray-600" />
+          {userLocation}
+        </HeadingDescription>
         <br /> <br />
       </HeroContainer>
       <br />

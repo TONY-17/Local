@@ -93,7 +93,7 @@ import RestaurantLandingPage from "demos/RestaurantLandingPage.js";
 /* Inner Pages */
 import LoginPage from "pages/Login.js";
 import SignupPage from "pages/Signup.js";
-// import PricingPage from "pages/Pricing.js";
+import PricingPage from "pages/Pricing.js";
 // import AboutUsPage from "pages/AboutUs.js";
 // import ContactUsPage from "pages/ContactUs.js";
 // import BlogIndexPage from "pages/BlogIndex.js";
@@ -138,6 +138,8 @@ export default function App() {
           <Route path="/create-new-account" element={<SignupPage />} />
           <Route path="/about-us" element={<PrivacyPolicyPage />} />
           <Route path="/login" element={<LoginPage/>} />
+          <Route path="/manage-account" element={<PricingPage/>} />
+         
         </Routes>
       </Router>
      </ClerkProvider>
