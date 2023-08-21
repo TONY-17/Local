@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -68,7 +68,7 @@ const Actions = styled.div`
 `;
 
 export default () => {
-  const [userLocation, setUserLocation] = React.useState(null);
+  
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="/">Home</NavLink>
@@ -76,13 +76,13 @@ export default () => {
       <NavLink href="/login">Sign In</NavLink>
     </NavLinks>,
   ];
-
+  const [userLocation, setUserLocation] = useState('');
+  
   const successCallback = async (position) => {
     try {
       const { latitude, longitude } = position.coords;
 
-      // Fetch the location name using Mapbox Geocoding API
-      const response = await fetch(``
+      const response = await fetch(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=pk.eyJ1IjoidHktMTciLCJhIjoiY2xsZXo4dnQzMHJyNTNxbnpsb2Myd3poNCJ9.8wqIfEeC6qmZVvf7b6vR_A`
       );
 
@@ -102,13 +102,15 @@ export default () => {
     console.log(error);
   };
 
-  React.useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    } else {
-      console.log("Geolocation is not supported by this browser.");
-    }
+  useEffect(() => {
+    const watchId = navigator.geolocation.watchPosition(successCallback, errorCallback);
+
+    return () => {
+      // Cleanup function to stop watching for position changes when the component unmounts
+      navigator.geolocation.clearWatch(watchId);
+    };
   }, []);
+
   return (
     <Container>
       <OpacityOverlay />
