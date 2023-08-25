@@ -9,6 +9,13 @@ import useAnimatedNavToggler from "../../helpers/useAnimatedNavToggler.js";
 import logo from "../../images/logo.svg";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  UserProfile,
+  RedirectToSignIn,
+} from "@clerk/clerk-react";
 
 const Header = tw.header`
   flex justify-between items-center
@@ -73,8 +80,15 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   const defaultLinks = [
     <NavLinks key={1}>
       <NavLink href="/">Home</NavLink>
-      <NavLink href="/about-us">About</NavLink>
-      <NavLink href="/login">Sign In</NavLink>  
+      <NavLink href="/about-us">About Us</NavLink>
+      {/* Signed in users will see their user profile,
+         unauthenticated users will be redirected */}
+      <SignedIn>
+        <NavLink href="/manage-account">Account</NavLink>
+      </SignedIn>
+      <SignedOut>
+        <NavLink href="/login">Sign In</NavLink>
+      </SignedOut>
     </NavLinks>
   ];
 

@@ -71,7 +71,7 @@ export default ({
         "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.95&w=512&h=512&q=80",
       title: "Enjoying the beach life while on a vacation",
       description:
-        "Lorem ipsum dolor sit amet, consecteturious adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua now ele.",
+        "Tide PODS Fresh Coral Blast Scent cleans in one step with its small and convenient package. It's a detergent, stain fighter and clothes brightener, all-in-1! Enjoy the super-concentrated detergent, odor fighters, and stain removers in each capsule to clean, freshen, and rejuvenate clothes.",
       authorName: "Adam Cuppy",
       authorProfile: "Vlogger",
       url: "https://reddit.com",

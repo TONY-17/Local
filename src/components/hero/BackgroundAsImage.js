@@ -20,6 +20,7 @@ import {
   RedirectToSignIn,
 } from "@clerk/clerk-react";
 import { useNavigate, BrowserRouter } from "react-router-dom";
+import { UserButton } from "@clerk/clerk-react";
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none`}
@@ -78,15 +79,16 @@ export default () => {
   const navigate = useNavigate();
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/about-us">About</NavLink>
-
-      {/* Signed in users will see their user profile,
-         unauthenticated users will be redirected */}
-      <SignedIn>
-        <NavLink href="/manage-account">Account</NavLink>
+<div style={{ display: 'flex', alignItems: 'center' }}>
+      <SignedIn style={{ display: 'flex', alignItems: 'center' }}>
+        <NavLink style={{ marginRight: '10px' }} href="/">Home</NavLink>
+        <NavLink style={{ marginRight: '20px' }} href="/about-us">About Us</NavLink>
+        <UserButton style={{ marginRight: '10px' }}/>
       </SignedIn>
+    </div>
       <SignedOut>
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/about-us">About Us</NavLink>
         <NavLink href="/login">Sign In</NavLink>
       </SignedOut>
     </NavLinks>,

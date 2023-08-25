@@ -172,8 +172,7 @@ export default ({
         url: "#",
       },
       
-    ],
-    Products: getRandomCards2(),
+    ]
   },
   productTabs = {
     Detergents: [

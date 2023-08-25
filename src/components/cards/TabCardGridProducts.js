@@ -70,59 +70,52 @@ export default ({
   tabs = {
     Detergents: [
       {
-        imageSrc:
-        "https://th.bing.com/th/id/OIP.QMbqiEh1w6qKgw5TPBwuKQHaHa?pid=ImgDet&rs=1",
+        imageSrc: "https://th.bing.com/th/id/OIP.QMbqiEh1w6qKgw5TPBwuKQHaHa?pid=ImgDet&rs=1",
         title: "Tide Fresh Coral Blast",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        content: "Experience the invigorating scent of the ocean with Tide Fresh Coral Blast. This detergent combines advanced cleaning power with a refreshing fragrance that will transform your laundry routine. Its innovative formula tackles tough stains while keeping your fabrics soft and vibrant. Dive into a world of clean, with the trusted performance of Tide.",
         price: "R53.99",
         rating: "5.0",
         reviews: "87",
         url: "#",
       },
       {
-        imageSrc:
-        "https://th.bing.com/th/id/OIP.ay2jAviSSn3vbcJV1uFeFAHaHa?pid=ImgDet&rs=1",
+        imageSrc: "https://th.bing.com/th/id/OIP.ay2jAviSSn3vbcJV1uFeFAHaHa?pid=ImgDet&rs=1",
         title: "OMO Auto",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        content: "Make laundry days effortless with OMO Auto detergent. Specially designed for automatic washing machines, this powerful formula gets rid of dirt and stains while being gentle on your clothes. No more worries about stubborn marks – OMO Auto takes care of it all. Enjoy clean, fresh-smelling garments every time.",
         price: "R53.99",
         rating: "5.0",
         reviews: "87",
         url: "#",
       },
       {
-        imageSrc:
-        "https://th.bing.com/th/id/OIP.HVRNqUmQS2DegJeMI6xNEAHaHa?pid=ImgDet&rs=1",
+        imageSrc: "https://th.bing.com/th/id/OIP.HVRNqUmQS2DegJeMI6xNEAHaHa?pid=ImgDet&rs=1",
         title: "Domestos",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        content: "Domestos brings you the ultimate solution for a germ-free home. This powerful detergent not only cleans but also disinfects, ensuring a hygienic environment for your family. Say goodbye to germs and tough stains with Domestos. Maintain a spotless home that radiates cleanliness and health.",
         price: "R53.99",
         rating: "5.0",
         reviews: "87",
         url: "#",
       },
       {
-        imageSrc:
-        "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
+        imageSrc: "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
         title: "Laundry Detergent",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        content: "Discover the cost-effective way to keep your clothes looking their best. Our Laundry Detergent offers reliable cleaning performance at an affordable price. Its advanced formula gently removes dirt and odors, leaving your fabrics fresh and revitalized. Experience laundry day satisfaction without breaking the bank.",
         price: "R22.99",
         rating: "4.8",
         reviews: "32",
         url: "#",
       },
       {
-        imageSrc:
-        "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
+        imageSrc: "https://th.bing.com/th/id/OIP.2dozPCju1Abie34GY46uzgHaHc?pid=ImgDet&rs=1",
         title: "Laundry Detergent",
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+        content: "Discover the cost-effective way to keep your clothes looking their best. Our Laundry Detergent offers reliable cleaning performance at an affordable price. Its advanced formula gently removes dirt and odors, leaving your fabrics fresh and revitalized. Experience laundry day satisfaction without breaking the bank.",
         price: "R22.99",
         rating: "4.8",
         reviews: "32",
         url: "#",
       },
     ],
-    Cosmetics: getRandomCards(),
+    Cosmetics: getRandomRepair(),
   },
   activeTabIndx = 0,
 }) => {
@@ -290,53 +283,43 @@ const getRandomCards = () => {
 const getRandomRepair = () => {
   const cards = [
     {
-      imageSrc:
-        "https://th.bing.com/th/id/OIP.Hbl_fkhVd4iqGWIrwqqhugHaEi?w=246&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-      title: "John Gattie",
-      content: "Want a perfectionist. Dont even think twice about picking me.",
-      price: "",
+      imageSrc: "https://th.bing.com/th/id/OIP.dzqB33x0LyqukcKpPZ52owHaFj?w=269&h=202&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      title: "Bestial Beauty",
+      content: "Elevate your beauty routine with the exquisite Bestial Beauty collection. Crafted with precision and care, each product is designed to enhance your natural beauty. Discover a world of luxurious textures, vibrant colors, and long-lasting formulas. From everyday essentials to glamorous accents, Bestial Beauty offers an unparalleled experience in cosmetics.",
+      price: "R53.99",
       rating: "5.0",
       reviews: "87",
       url: "#",
     },
-
     {
-      imageSrc:
-        "https://th.bing.com/th/id/OIP.1ro3Q_gSyhWsw46ewHh5pgHaFh?w=243&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-      title: "France Jacop",
-      content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: "",
+      imageSrc: "https://th.bing.com/th/id/R.6da6e5ddffb5236157085b0dd7dff8e5?rik=rzpUgrWXiUsMGA&riu=http%3a%2f%2f3.bp.blogspot.com%2f_MAEXNH0nVoU%2fTO1MWhnh1nI%2fAAAAAAAAHrM%2fMo6k0MpX6Zo%2fs1600%2fchanel%2bholiday%2bgroup%2b2.bmp&ehk=y55fqzSPYuAhLEMQVXcq9lsCTi0A%2bkcH23VXYB%2bZNRQ%3d&risl=&pid=ImgRaw&r=0",
+      title: "Avon",
+      content: "Discover the timeless elegance of Avon's beauty products. With a legacy of excellence, Avon offers a diverse range of cosmetics that cater to your individual style. From lipsticks that pop to skincare that nourishes, Avon products are designed to help you feel confident and radiant. Experience beauty with a brand that has stood the test of time.",
+      price: "R22.99",
       rating: "4.8",
       reviews: "32",
       url: "#",
     },
-    ,
     {
-      imageSrc:
-        "https://th.bing.com/th/id/OIP.YmQTzOogDKJ737WIl9qrGAEyDL?pid=ImgDet&w=200&h=132&c=7&dpr=1,5",
-      title: "Tyler Jones Lee",
-      content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: "",
-      rating: "4.8",
-      reviews: "32",
+      imageSrc: "https://www.littlemagonline.com/wp-content/uploads/2009/10/chanelwinter2009noirsobscurscollection1-280x300.jpeg",
+      title: "Nail Archives",
+      content: "Indulge your nails with the captivating Nail Archives collection by Chanel. Immerse yourself in a world of sophisticated nail colors that express your individuality. From classic neutrals to bold hues, this collection offers endless possibilities for nail artistry. Elevate your style with nails that are as stunning as you are.",
+      price: "R89.99",
+      rating: "4.6",
+      reviews: "12",
       url: "#",
     },
-    ,
     {
-      imageSrc:
-        "https://th.bing.com/th/id/OIP.8yisa_0vA4_I2g5KbCI0wQHaE8?w=286&h=191&c=7&r=0&o=5&dpr=1.5&pid=1.7",
-      title: "Carnet Nachos",
-      content:
-        "Very reliable will arrive early and complete all the desired work.",
-      price: "",
+      imageSrc: "https://th.bing.com/th/id/OIP.-DTAICpg3D4DISX13eH_9QHaFw?pid=ImgDet&w=200&h=154&c=7&dpr=1,5",
+      title: "The Pink Panel",
+      content: "Introducing The Pink Panel, your go-to destination for makeup essentials. From blushes that add a natural flush to your cheeks to eyeshadows that create mesmerizing looks, this collection has it all. Each product is carefully curated to offer high-quality pigments and long-lasting wear. Join The Pink Panel and embrace a world of endless makeup possibilities.",
+      price: "R312.99",
       rating: "3.9",
       reviews: "26",
       url: "#",
     },
   ];
-
+  
   // Shuffle array
   return cards.sort(() => Math.random() - 0.5);
 };

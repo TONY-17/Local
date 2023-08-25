@@ -35,6 +35,13 @@ const Text = styled.div`
     }
   }
 `;
+const SlantedBackground = styled.span`
+  ${tw`relative text-primary-500 px-4 -mx-4 py-2`}
+  &::before {
+    content: "";
+    ${tw`absolute inset-0 bg-gray-100 transform -skew-x-12 -z-10`}
+  }
+`;
 export default ({ headingText = "About Info" }) => {
 
   return (
@@ -43,11 +50,12 @@ export default ({ headingText = "About Info" }) => {
       <Container>
         <ContentWithPaddingXl>
           <HeadingRow>
-            <Heading>{headingText}</Heading>
+            <Heading><SlantedBackground>{headingText}</SlantedBackground></Heading>
+            
           </HeadingRow>
           <Text>
             <p>Last updated: August 15, 2023</p>
-
+            <br/>
             <p>
               <b>Easy plug marketplace</b> is a hyperlocal platform that connect
               verified local SMMEs with buyers. The platform comes with a
